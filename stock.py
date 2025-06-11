@@ -101,16 +101,3 @@ class StockData:
         st.write(f"Lower 2.5 Percentile : {lower[-1]:.2f}")
         st.write(f"Upper 97.5 percentile : {upper[-1]:.2f}")
         return fig
-
-
-if __name__ == "__main__":
-    s = StockData(ticker="ITC.NS")
-    print(s)
-    print(s.data)
-    print(type(s.data))
-    print(f"Log Return mean annualised :{s.mu:.4f}")
-    print(f"Volatility Annualised : {s.sigma:.4f}")
-    fig1 = s.plot_data()
-    plt.show()
-    fig2 = s.plot_simulations()
-    plt.show()

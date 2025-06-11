@@ -97,7 +97,11 @@ class StockData:
         ax.legend()
         ax.grid()
         st.subheader("Forecast 1 year")
-        st.write(f"Median : {median[-1]:.2f}")
+        S0 = paths[0, 0]
+        st.write(f"Current Price : {S0:.2f}")
+        st.write(f"Forecasted Median : {median[-1]:.2f}")
         st.write(f"Lower 2.5 Percentile : {lower[-1]:.2f}")
         st.write(f"Upper 97.5 percentile : {upper[-1]:.2f}")
+        pct_chg = (median[-1] - S0) / S0
+        st.write(f"Percentage change from forecasted median 1 year : {pct_chg:.2%}")
         return fig
